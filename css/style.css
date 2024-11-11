@@ -251,6 +251,35 @@
 
 /* Third | Recent job section End */
 
+/* Gallery page start */
+
+.gallery-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.gallery-item {
+    display: inline-block;
+    width: 22%;
+    margin: 1%;
+    vertical-align: top;
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 3px;
+}
+
+.gallery-item p {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Gallery page end */
+
 /* Footer  */
 .footer {
     text-align: center;
