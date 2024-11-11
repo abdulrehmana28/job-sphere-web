@@ -181,10 +181,10 @@
 
 /* second section ends */
 
-/* Third | Recent job section start */
+/* Third | Recent job section start | job.html */
 .recent-job-section {
     width: 100%;
-    background-color: #f7f1ed;
+    background-color: #F4F4F4;
 }
 
 .recent-job-container {
@@ -255,7 +255,7 @@
 .footer {
     text-align: center;
     padding: 20px;
-    background-color: #F4F4F4;
+    background-color: #edeaea;
     border-top: 1px solid black;
 }
 
