@@ -207,14 +207,13 @@
     vertical-align: top;
 }
 
-/* Logo styling */
+
 .job-card img {
     height: 50px;
     vertical-align: middle;
     margin-right: 5px;
 }
 
-/* Job title and level info styling */
 .job-title {
     font-weight: bold;
     font-size: 16px;
@@ -420,6 +419,129 @@ textarea {
 }
 
 /* contact us page end */
+
+/* Login page  */
+
+.login-section {
+    width: 100%;
+    padding-left: 35%;
+    
+}
+.login-form {
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+}
+
+/* Style for form title */
+.login-form h2 {
+    margin-top: 80px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Style labels with inline-block for alignment */
+.login-form .form-label {
+    display: inline-block;
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+/* Style for text inputs */
+.login-form .form-input {
+    width: 260px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Style for the checkbox and label */
+.login-form .form-checkbox {
+    margin-bottom: 10px;
+}
+.login-form .checkbox-label {
+    font-size: 0.9em;
+}
+
+/* Style the submit button */
+.login-form .submit-button {
+    width: 100%;
+    padding: 8px;
+    background-color: #C95063;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.login-form .submit-button:hover {
+    background-color: #e67182;
+}
+
+/* sign up page  */
+
+.signup-section {
+    width: 100%;
+    padding-left: 35%;
+}
+.signup-form {
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+}
+
+/* Style for form title */
+.signup-form h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+/* Style labels with inline-block for alignment */
+.signup-form .form-label {
+    display: inline-block;
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+/* Style for text inputs */
+.signup-form .form-input {
+    width: 260px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Style for the radio buttons and labels */
+.signup-form input[type="radio"] {
+    margin-left: 20px;
+}
+
+/* Style the submit button */
+.signup-form .submit-button {
+    width: 100%;
+    padding: 8px;
+    background-color: #C95063;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.signup-form .submit-button:hover {
+    background-color: #e67182;
+}
+
+/* Style for the login link */
+.signup-form .signup-form .login-link {
+    color: #0000EE;
+    text-decoration: none;
+}
+
+.signup-form .login-link:hover {
+    text-decoration: underline;
+}
 
 /* Footer  */
 .footer {

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login - JobSphere</title>
+    <link rel="icon" href="images/emblem.png" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <section class="first-section">
+      <header>
+        <!-- Start of Navigation bar-->
+        <nav class="navbar">
+          <div class="navbar-logo-div">
+            <a href="index.html">
+              <img src="images/logo.png" alt="JobSphere logo" />
+            </a>
+          </div>
+
+          <ul class="navbar-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="jobs.html">Jobs</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+            <li>
+              <form action="jobs.html" method="get">
+                <input
+                  type="search"
+                  name="search"
+                  class="navbar-search"
+                  placeholder="Search Here"
+                  required
+                />
+                <input class="navbar-btn" type="submit" value="search" />
+              </form>
+            </li>
+            <li>
+              <a href="login.html" class="navbar-btn">login</a>
+            </li>
+            <li>
+              <a href="signup.html" class="navbar-btn">Signup</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- end of Navigation bar-->
+      </header>
+
+      <div class="login-section">
+        <form class="login-form" action="index.html" method="get">
+          <h2>Login</h2>
+
+          <label for="username" class="form-label">Username:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            class="form-input"
+            required
+          /><br />
+
+          <label for="password" class="form-label">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-input"
+            required
+          /><br />
+
+          <input
+            type="checkbox"
+            id="remember"
+            name="remember"
+            class="form-checkbox"
+          />
+          <label for="remember" class="checkbox-label">Remember Me</label
+          ><br /><br />
+
+          <input type="submit" value="Login" class="submit-button" />
+        </form>
+      </div>
+    </section>
+
+    <!-- Start of Footer-->
+    <footer class="footer">
+      <div class="footer-section">
+        <h3>JobSphere</h3>
+        <li>
+          <p>
+            1234 Vinewood Blvd, Suite 567<br />
+            Vinewood, Los Santos, CA 90001<br />
+            Mail us at: hello@jobsphere.com<br />
+            United States
+          </p>
+        </li>
+      </div>
+
+      <!-- Quick Links Section -->
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </div>
+
+      <!-- Social Media Links Section -->
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <li><a href="#">facebook.com/jobsphere</a></li>
+        <li><a href="#">twitter.com/jobsphere</a></li>
+        <li><a href="#">youtube.com/jobsphere</a></li>
+      </div>
+
+      <!-- Footer Bottom Text -->
+      <div class="footer-bottom">© 2024 jobsphere.com All Rights Reserved</div>
+    </footer>
+    <!-- end of Footer-->
+  </body>
+</html>
