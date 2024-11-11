@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+.first-section {
+    height: 100vh;
+    width: 100%;
+    background-color: gainsboro;
+}  
+
+/* Navigation bar */
+.navbar {
+    background-color: bisque;
+    width: 100%;
+    height: 10vh;
+    padding: 10px 20px;
+}
+
+.navbar-logo-div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.navbar-logo-div a img{
+    height: 7vh;
+    display: inline-block;
+}
+
+.navbar-links {
+    text-align: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 70%;
+    display: inline-block;
+}
+
+.navbar-links li{
+    display: inline-block;
+    margin-left: 2%;
+    
+}
+
+.navbar-links li a{
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-links li a:hover{
+    
+    color:#FC4C68;
+    text-decoration: underline;
+}
+
+.navbar-search {
+    padding: 5px 10px;
+    margin: 0 10px;
+    border-radius: 8px;
+}
+.navbar-search:active {
+    background-color: gray;
+}
+
+.navbar-btn {
+    padding: 5px 7px;
+    border-radius: 8px;
+    border: none;
+    background-color: #FC4C68;
+    color: gainsboro;
+}
+
+.navbar-btn:hover {
+    color: black;
+    background-color: aliceblue;
+}
+/* Navbar ends */
+
+/* Footer  */
+.footer {
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-section {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    padding: 10px 55px;
+}
+
+.footer-section h3 {
+    padding-bottom: 20px;
+}
+
+.footer li {
+    list-style-type: none;
+    padding: 5px;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: #000;
+}
+
+.footer-section a:hover {
+    color: #FC4C68;
+    text-decoration: underline;
+}
+
+.footer-section p {
+    line-height: 1.6;
+}
+.footer-bottom {
+    padding-top: 15px;
+    margin-top: 10px;
+    border-top: 1px solid black;
+}
+/* Footer Ends */
