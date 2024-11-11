@@ -35,7 +35,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    width: 70%;
+    width: 80%;
     display: inline-block;
 }
 
@@ -122,6 +122,7 @@
     margin-right: 15px;
     color: white;
     border-radius: 5px;
+    text-decoration: none;
 }
 
 .image-content {
@@ -180,10 +181,82 @@
 
 /* second section ends */
 
+/* Third | Recent job section start */
+.recent-job-section {
+    width: 100%;
+    background-color: #f7f1ed;
+}
+
+.recent-job-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.recent-job-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.job-card {
+    display: inline-block;
+    border: 1px solid #000;
+    width: 250px;
+    padding: 10px;
+    margin: 10px;
+    vertical-align: top;
+}
+
+/* Logo styling */
+.job-card img {
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* Job title and level info styling */
+.job-title {
+    font-weight: bold;
+    font-size: 16px;
+    padding-top: 10px;
+}
+
+.job-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.job-description {
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.job-salary {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.apply-button {
+    padding: 5px 10px;
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+    border: 1px solid #000;
+    background-color: #f8f8f8;
+    cursor: pointer;
+}
+
+/* Third | Recent job section End */
+
 /* Footer  */
 .footer {
     text-align: center;
     padding: 20px;
+    background-color: #F4F4F4;
+    border-top: 1px solid black;
 }
 
 .footer-section {
