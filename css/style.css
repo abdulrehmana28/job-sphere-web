@@ -285,6 +285,7 @@
 .about-container {
     width: 100%;
     text-align: center;
+    background-color: #F4F4F4;
 }
 
 .about-image img{
@@ -315,17 +316,110 @@
     margin-top: 35px;
 }
 
-.about-text-section {
-
-}
-
 .about-text-section > p{
     line-height: 1.4;
     font-size: 1.1rem;
     text-align: justify;
 }
 
+
+
 /* about page end */
+
+/* contact us page start */
+.contact-container {
+    width: 100%;
+    text-align: center;
+    background-color: #F4F4F4;
+}
+
+.contact-image img{
+    object-fit:cover;
+    width: 100%;
+    height: auto;
+}
+
+.contact-text-container{
+    display: inline-block;
+    width: 60%;
+    text-align: left;
+    margin-top: 50px;
+}
+
+.contact-text-section > h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.contact-text-section  h2 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 35px;
+}
+
+.contact-text-section > p{
+    line-height: 1.4;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+.contact-form {
+    border: 1px solid #000;
+    padding: 20px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin: 20px;
+}
+
+.contact-form label {
+    display: inline-block;
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.contact-form input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="radio"],
+select,
+textarea {
+    width: 250px;
+    margin-bottom: 10px;
+}
+
+.contact-form select {
+    width: 150px;
+}
+
+.contact-form textarea {
+    width: 100%;
+}
+
+.contact-form input[type="checkbox"] {
+    margin-bottom: 10px;
+}
+
+.contact-form input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #C95063;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #e67182;
+}
+
+/* contact us page end */
 
 /* Footer  */
 .footer {
