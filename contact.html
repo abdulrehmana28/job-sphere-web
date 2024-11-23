@@ -9,46 +9,56 @@
   <body>
     <section class="first-section">
       <header>
-        <!-- Start of Navigation bar-->
+        <!-- !Start of Navigation bar-->
         <nav class="navbar">
-          <div class="navbar-logo-div">
+          <!-- ! Logo-->
+          <div id="nav-left">
             <a href="index.html">
               <img src="images/logo.png" alt="JobSphere logo" />
             </a>
           </div>
 
-          <ul class="navbar-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="jobs.html">Jobs</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="about.html">About us</a></li>
-            <li><a href="contact.html">Contact us</a></li>
-            <li>
+          <div id="nav-middle">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="jobs.html">Jobs</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div id="nav-right">
+            <div id="nav-right-1">
               <form action="jobs.html" method="get">
                 <input
+                  id="navbar-search"
                   type="search"
                   name="search"
                   class="navbar-search"
                   placeholder="Search Here"
                   required
                 />
-                <input class="navbar-btn" type="submit" value="search" />
+                <button class="navbar-search-btn" type="submit">
+                  <img src="images/icons/search-icon.svg" alt="search" />
+                </button>
               </form>
-            </li>
-            <li>
-              <a href="login.html" class="navbar-btn">login</a>
-            </li>
-            <li>
-              <a href="signup.html" class="navbar-btn">Signup</a>
-            </li>
-          </ul>
+            </div>
+            <ul>
+              <li>
+                <a href="login.html" class="navbar-btn">Sign in</a>
+              </li>
+              <li>
+                <a href="signup.html" class="navbar-btn">Sign up</a>
+              </li>
+            </ul>
+          </div>
         </nav>
-        <!-- end of Navigation bar-->
+        <!--! end of Navigation bar-->
       </header>
 
       <div class="contact-container">
         <div class="contact-image">
-          <img src="images/contact.jpeg" alt="contact us" />
+          <!-- <img src="images/contact.jpeg" alt="contact us" /> -->
         </div>
 
         <!--Contact section text starts-->
@@ -128,7 +138,7 @@
           <br />
           <br />
 
-          <!-- contact form starts-->
+          <!--! ========== contact form starts ========================-->
 
           <form class="contact-form">
             <h2>Contact Us</h2>
@@ -141,33 +151,28 @@
 
             <label for="contact">Contact No:</label>
             <input
-              type="text"
+              type="number"
               id="contact"
               name="contact"
-              placeholder="Enter 10-digit number"
+              placeholder="Enter 11-digit number"
             /><br />
 
-            <label for="education">Education:</label>
-            <input type="text" id="education" name="education" /><br />
-
-            <label for="profession">Profession:</label>
-            <input type="text" id="profession" name="profession" /><br />
-
-            <label for="source">How did you hear about us?</label>
+            <label for="source">How did you hear about us?</label> <br />
             <select id="source" name="source">
+              <option value="">Select</option>
               <option value="search_engine">Search Engine</option>
               <option value="friend">Friend</option>
               <option value="social_media">Social Media</option>
               <option value="other">Other</option></select
             ><br />
 
-            <label for="comments">Comments:</label>
+            <label for="comments">Message:</label>
             <textarea
               id="comments"
               name="comments"
               rows="4"
               cols="35"
-              placeholder="Your comments here..."
+              placeholder="Your message here..."
             ></textarea
             ><br />
 

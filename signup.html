@@ -9,41 +9,51 @@
   <body>
     <section class="first-section">
       <header>
-        <!-- Start of Navigation bar-->
+        <!-- !Start of Navigation bar-->
         <nav class="navbar">
-          <div class="navbar-logo-div">
+          <!-- ! Logo-->
+          <div id="nav-left">
             <a href="index.html">
               <img src="images/logo.png" alt="JobSphere logo" />
             </a>
           </div>
 
-          <ul class="navbar-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="jobs.html">Jobs</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="about.html">About us</a></li>
-            <li><a href="contact.html">Contact us</a></li>
-            <li>
+          <div id="nav-middle">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="jobs.html">Jobs</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div id="nav-right">
+            <div id="nav-right-1">
               <form action="jobs.html" method="get">
                 <input
+                  id="navbar-search"
                   type="search"
                   name="search"
                   class="navbar-search"
                   placeholder="Search Here"
                   required
                 />
-                <input class="navbar-btn" type="submit" value="search" />
+                <button class="navbar-search-btn" type="submit">
+                  <img src="images/icons/search-icon.svg" alt="search" />
+                </button>
               </form>
-            </li>
-            <li>
-              <a href="login.html" class="navbar-btn">login</a>
-            </li>
-            <li>
-              <a href="signup.html" class="navbar-btn">Signup</a>
-            </li>
-          </ul>
+            </div>
+            <ul>
+              <li>
+                <a href="login.html" class="navbar-btn">Sign in</a>
+              </li>
+              <li>
+                <a href="signup.html" class="navbar-btn">Sign up</a>
+              </li>
+            </ul>
+          </div>
         </nav>
-        <!-- end of Navigation bar-->
+        <!--! end of Navigation bar-->
       </header>
       <div class="signup-section">
         <form class="signup-form" action="login.html" method="get">
@@ -59,7 +69,7 @@
             name="email"
             class="form-input"
             required
-          /><br />
+          />
 
           <label for="password" class="form-label">Password:</label>
           <input
@@ -68,7 +78,7 @@
             name="password"
             class="form-input"
             required
-          /><br />
+          />
 
           <label for="confirm_password" class="form-label"
             >Confirm Password:</label
@@ -79,34 +89,31 @@
             name="confirm_password"
             class="form-input"
             required
-          /><br />
+          />
 
-          <label class="form-label">Register as:</label><br />
+          <label class="form-label">Register as:</label><br>
           <input
             type="radio"
             id="job_seeker"
             name="register_as"
             value="job_seeker"
-          />
-          <label for="job_seeker">Job Seeker</label><br />
+          />Job Seeker
+
           <input
             type="radio"
             id="employer"
             name="register_as"
             value="employer"
           />
-          <label for="employer">Employer</label><br /><br />
+          Employer
 
-          <input
-            type="submit"
-            value="Sign Up"
-            class="submit-button"
-          /><br /><br />
+          <input type="submit" value="Sign Up" class="submit-button" />
 
           <p>
             Already have an account?
-            <a href="login.html" class="login-link">Login here.</a>
+            <a href="login.html" id="login-link">Login here</a>
           </p>
+          <br />
           <br />
         </form>
       </div>
