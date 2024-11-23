@@ -9,41 +9,51 @@
   <body>
     <section class="first-section">
       <header>
-        <!-- Start of Navigation bar-->
+        <!-- !Start of Navigation bar-->
         <nav class="navbar">
-          <div class="navbar-logo-div">
+          <!-- ! Logo-->
+          <div id="nav-left">
             <a href="index.html">
               <img src="images/logo.png" alt="JobSphere logo" />
             </a>
           </div>
 
-          <ul class="navbar-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="jobs.html">Jobs</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="about.html">About us</a></li>
-            <li><a href="contact.html">Contact us</a></li>
-            <li>
+          <div id="nav-middle">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="jobs.html">Jobs</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div id="nav-right">
+            <div id="nav-right-1">
               <form action="jobs.html" method="get">
                 <input
+                  id="navbar-search"
                   type="search"
                   name="search"
                   class="navbar-search"
                   placeholder="Search Here"
                   required
                 />
-                <input class="navbar-btn" type="submit" value="search" />
+                <button class="navbar-search-btn" type="submit">
+                  <img src="images/icons/search-icon.svg" alt="search" />
+                </button>
               </form>
-            </li>
-            <li>
-              <a href="login.html" class="navbar-btn">login</a>
-            </li>
-            <li>
-              <a href="signup.html" class="navbar-btn">Signup</a>
-            </li>
-          </ul>
+            </div>
+            <ul>
+              <li>
+                <a href="login.html" class="navbar-btn">Sign in</a>
+              </li>
+              <li>
+                <a href="signup.html" class="navbar-btn">Sign up</a>
+              </li>
+            </ul>
+          </div>
         </nav>
-        <!-- end of Navigation bar-->
+        <!--! end of Navigation bar-->
       </header>
 
       <!-- Start of Gallery section-->
