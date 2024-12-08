@@ -1,3 +1,4 @@
+<?php require("includes/config.php"); ?>
 <!DOCTYPE html>
 <html>
 <!-- Head -->
@@ -25,7 +26,7 @@
           across multiple industries, roles, and experience levels.
         </p>
         <div class="buttons">
-          <a href="jobs.html" class="btn">Find Job</a>
+          <a href="jobs.php" class="btn">Find Job</a>
           <a href="#services" class="btn">Post Job</a>
         </div>
       </div>

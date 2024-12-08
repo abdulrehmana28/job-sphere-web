@@ -1,10 +1,13 @@
+<?php require("includes/config.php"); ?>
 <!DOCTYPE html>
 <html>
 <!-- ========= head ===== -->
+
 <head>
   <title>About - JobSphere</title>
-<?php require('includes/head.php'); ?>
+  <?php require('includes/head.php'); ?>
 </head>
+
 <body>
   <section class="first-section">
     <!--=========== Navbar ========  -->
