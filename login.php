@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <!-- ======== head ===== -->
-<?php require('includes/head.php'); ?>
+
+<head>
+  <title>Sign in - JobSphere</title>
+  <?php require('includes/head.php'); ?>
+</head>
 
 <body>
   <section class="first-section">

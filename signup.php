@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <!-- ==== head ======= -->
-<?php require('includes/head.php'); ?>
+
+<head>
+  <title>Sign up - JobSphere</title>
+  <?php require('includes/head.php'); ?>
+</head>
 
 <body>
   <section class="first-section">
@@ -25,9 +29,9 @@
         <input type="password" id="confirm_password" name="confirm_password" class="form-input" required />
 
         <label class="form-label">Register as:</label><br>
-        <input type="radio" id="job_seeker" name="register_as" value="job_seeker" />Job Seeker
+        <input type="radio" id="job_seeker" name="usertype" value="job_seeker" />Job Seeker
 
-        <input type="radio" id="employer" name="register_as" value="employer" />
+        <input type="radio" id="employer" name="usertype" value="employer" />
         Employer
 
         <input type="submit" value="Sign Up" class="submit-button" />

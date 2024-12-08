@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <!-- Head -->
-<?php
-require('includes/head.php');
-?>
+
+<head>
+  <title>Home - JobSphere</title>
+  <?php require('includes/head.php'); ?>
+</head>
 
 <body>
   <section class="first-section">
