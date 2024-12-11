@@ -54,8 +54,10 @@
 
           <!-- Job Card ends -->
         </div>
+
       </div>
     </section>
+    <br>
     <!-- end of job listing section-->
   </section>
 
