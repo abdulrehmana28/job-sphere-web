@@ -5,7 +5,7 @@
     <nav class="navbar">
         <!-- ! Logo-->
         <div id="nav-left">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="images/logo.png" alt="JobSphere logo" />
             </a>
         </div>
