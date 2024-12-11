@@ -1,4 +1,37 @@
-<?php require("includes/config.php"); ?>
+<?php require("includes/config.php");
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $phone = $_POST['phone'];
+  $source = $_POST['source'];
+  $message = $_POST['message'];
+
+
+  if (empty($name) || empty($email) || empty($phone) || empty($source) || empty($message)) {
+    echo "All fields are required";
+  } else {
+
+    $sql = "INSERT INTO `contact_form` (`name`, `email`, `phone` ,`source`, `message`) VALUES (?, ?, ?, ?, ?);";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('sssss', $name, $email, $phone, $source, $message);
+
+    if ($stmt->execute()) {
+      echo ('Your response has been recorded');
+      header('location:index.php');
+    } else {
+      echo 'Error: ' . $stmt->error;
+    }
+    $stmt->close();
+  }
+}
+
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <!-- ======== head ===== -->
@@ -97,7 +130,7 @@
 
         <!--! ========== contact form starts ========================-->
 
-        <form class="contact-form">
+        <form class="contact-form" method="POST">
           <h2>Contact Us</h2>
 
           <label for="name">Name:</label>
@@ -106,8 +139,8 @@
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" /><br />
 
-          <label for="contact">Contact No:</label>
-          <input type="number" id="contact" name="contact" placeholder="Enter 11-digit number" /><br />
+          <label for="phone">Contact No:</label>
+          <input type="tel" id="phone" name="phone" placeholder="92-455-678467" /><br />
 
           <label for="source">How did you hear about us?</label> <br />
           <select id="source" name="source">
@@ -118,8 +151,8 @@
             <option value="other">Other</option>
           </select><br />
 
-          <label for="comments">Message:</label>
-          <textarea id="comments" name="comments" rows="4" cols="35"
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" cols="35"
             placeholder="Your message here..."></textarea><br />
 
           <input type="checkbox" id="email_updates" name="email_updates" />
