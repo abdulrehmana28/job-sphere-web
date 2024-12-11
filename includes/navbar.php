@@ -5,7 +5,7 @@
     <nav class="navbar">
         <!-- ! Logo-->
         <div id="nav-left">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="images/logo.png" alt="JobSphere logo" />
             </a>
         </div>
@@ -30,14 +30,29 @@
 
                 </form>
             </div>
-            <ul>
+            <?php
+            if (isset($_SESSION['logged_in'])) {
+                if ($_SESSION['logged_in'] == 'T') {
+                    echo '<ul>
+                    <li>
+                         <h4>Salam, ' . $_SESSION['user_name'] . '</h4>
+                    </li>
+                    <li>
+                        &nbsp;&nbsp;&nbsp;<a href="./includes/logout.php" class="navbar-btn">Log out</a>
+                    </li>
+                </ul>';
+                }
+            } else {
+                echo '<ul>
                 <li>
                     <a href="login.php" class="navbar-btn">Sign in</a>
                 </li>
                 <li>
                     <a href="signup.php" class="navbar-btn">Sign up</a>
                 </li>
-            </ul>
+            </ul>';
+            }
+            ?>
         </div>
     </nav>
     <!--! end of Navigation bar-->

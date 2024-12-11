@@ -493,7 +493,7 @@ header {
 
 .contact-form input[type="text"],
 input[type="email"],
-input[type="number"],
+input[type="tel"],
 input[type="radio"],
 select,
 textarea {
