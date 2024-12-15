@@ -85,7 +85,7 @@
           </div>
           <div class="job-info">
             <div class="job-salary">85k/Year</div>
-            <a href="login.php" class="apply-button">Apply Now</a>
+            <a href="login.php" class="card-button">Apply Now</a>
           </div>
         </div>
 
@@ -105,7 +105,7 @@
           </div>
           <div class="job-info">
             <div class="job-salary">190k/Year</div>
-            <a href="login.php" class="apply-button">Apply Now</a>
+            <a href="login.php" class="card-button">Apply Now</a>
           </div>
         </div>
 
@@ -125,7 +125,7 @@
           </div>
           <div class="job-info">
             <div class="job-salary">105k/Year</div>
-            <a href="login.php" class="apply-button">Apply Now</a>
+            <a href="login.php" class="card-button">Apply Now</a>
           </div>
         </div>
       </div>

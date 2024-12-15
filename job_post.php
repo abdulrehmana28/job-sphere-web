@@ -2,8 +2,8 @@
 
 <?php
 if (isset($_SESSION['logged_in'])) {
-    if ($_SESSION['logged_in'] == 'T') {
-        if ($_SESSION['user_type'] == 'employer') {
+    if ($_SESSION['logged_in'] === 'T') {
+        if ($_SESSION['user_type'] === 'employer') {
 
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $name = $_POST['company_name'];
@@ -23,7 +23,7 @@ if (isset($_SESSION['logged_in'])) {
 
                     if ($stmt->execute()) {
                         echo ('Your response has been recorded');
-                        header('location:index.php');
+                        header('location:jobs.php');
                     } else {
                         echo 'Error: ' . $stmt->error;
                     }
