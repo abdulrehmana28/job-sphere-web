@@ -43,7 +43,13 @@
                 </div>
                 <div class="job-info">
                   <div class="job-salary"><?php echo $job['job_salary']; ?>/Year</div>
-                  <a href="apply.php" class="apply-button">Apply Now</a>
+                  <!-- Checking if user is admin or not -->
+                  <?php if (isset($_SESSION['logged_in'])  && $_SESSION['logged_in'] === 'T' && isset($_SESSION['user_type']) && $_SESSION['user_type'] === 'employer') { ?>
+                    <a href="edit.php?eid=<?php echo $job['job_id']; ?>" class="card-button">Edit</a>
+                    <a href="delete.php?did=<?php echo $job['job_id']; ?>" class="card-button">Delete</a>
+                  <?php } else { ?>
+                    <a href="apply.php" class="card-button">Apply Now</a>
+                  <?php } ?>
                 </div>
               </div>
             <?php } ?>
