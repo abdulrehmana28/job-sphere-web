@@ -338,7 +338,7 @@ header {
     font-size: 14px;
 }
 
-.apply-button {
+.card-button {
     padding: 5px 10px;
     font-size: 14px;
     color: black;
@@ -493,7 +493,7 @@ header {
 
 .contact-form input[type="text"],
 input[type="email"],
-input[type="number"],
+input[type="tel"],
 input[type="radio"],
 select,
 textarea {

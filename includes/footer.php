@@ -33,5 +33,6 @@
 
     <!-- Footer Bottom Text -->
     <div class="footer-bottom">© 2024 jobsphere.com All Rights Reserved</div>
+    <?php $conn->close(); ?>
 </footer>
 <!-- end of Footer-->

@@ -1,7 +1,12 @@
+<?php require("includes/config.php"); ?>
 <!DOCTYPE html>
 <html>
 <!-- ======== head ===== -->
-<?php require('includes/head.php'); ?>
+
+<head>
+  <title>Gallery - JobSphere</title>
+  <?php require('includes/head.php'); ?>
+</head>
 
 <body>
   <section class="first-section">

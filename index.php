@@ -1,9 +1,12 @@
+<?php require("includes/config.php"); ?>
 <!DOCTYPE html>
 <html>
 <!-- Head -->
-<?php
-require('includes/head.php');
-?>
+
+<head>
+  <title>Home - JobSphere</title>
+  <?php require('includes/head.php'); ?>
+</head>
 
 <body>
   <section class="first-section">
@@ -23,8 +26,8 @@ require('includes/head.php');
           across multiple industries, roles, and experience levels.
         </p>
         <div class="buttons">
-          <a href="jobs.html" class="btn">Find Job</a>
-          <a href="#services" class="btn">Post Job</a>
+          <a href="jobs.php" class="btn">Find Job</a>
+          <a href="job_post.php" class="btn">Post Job</a>
         </div>
       </div>
       <div class="image-content">
@@ -82,7 +85,7 @@ require('includes/head.php');
           </div>
           <div class="job-info">
             <div class="job-salary">85k/Year</div>
-            <a href="apply.html" class="apply-button">Apply Now</a>
+            <a href="login.php" class="card-button">Apply Now</a>
           </div>
         </div>
 
@@ -102,7 +105,7 @@ require('includes/head.php');
           </div>
           <div class="job-info">
             <div class="job-salary">190k/Year</div>
-            <a href="apply.html" class="apply-button">Apply Now</a>
+            <a href="login.php" class="card-button">Apply Now</a>
           </div>
         </div>
 
@@ -122,7 +125,7 @@ require('includes/head.php');
           </div>
           <div class="job-info">
             <div class="job-salary">105k/Year</div>
-            <a href="apply.html" class="apply-button">Apply Now</a>
+            <a href="login.php" class="card-button">Apply Now</a>
           </div>
         </div>
       </div>
