@@ -536,7 +536,46 @@ textarea {
 
 /* contact us page end */
 
-/* Login page  */
+/* !=========== Inquiries page ========= */
+
+.inquiries-container {
+    width: 100%;
+    height: fit-content;
+    /* background-color: gray; */
+}
+.inquiries-container h1 {
+    text-align: center;
+    margin: 1.5vw 0;
+    font-size: 2.5vw;
+}
+
+.inquiries-container table {
+    margin: 1.5vw auto;
+    width: 90%;
+    background-color: rgb(228, 218, 210);
+    position: relative;
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+}
+
+.inquiries-container table th {
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #333333;
+    padding: 0.7vw;
+    color: white;
+}
+.inquiries-container table th:last-child{
+    width: 35%;
+}
+
+.inquiries-container table td {
+    text-align: center;
+    padding: 0.7vw;
+    border: 1px solid #333333;
+}
+
+/*! ======== Login page ===============  */
 
 .login-section {
     /* background-color: gray; */
@@ -601,7 +640,7 @@ textarea {
     background-color: #e67182;
 }
 
-/* sign up page  */
+/*! ========== sign up page  =======*/
 
 .signup-section {
     width: 100%;
@@ -678,7 +717,7 @@ textarea {
     text-decoration: underline;
 }
 
-/* Footer  */
+/*! ========= Footer  ==============*/
 .footer {
     text-align: center;
     padding: 20px;

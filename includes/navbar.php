@@ -16,7 +16,13 @@
                 <li><a href="jobs.php">Jobs</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
                 <li><a href="about.php">About</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <!-- check if user is login & admin show qurey page link other wise contact link -->
+                <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === 'T' && isset($_SESSION['user_type']) && $_SESSION['user_type'] === 'admin') { ?>
+                    <li><a href="inquiries.php">Inquiries</a></li>
+                <?php } else {  ?>
+
+                    <li><a href="contact.php">Contact</a></li>
+                <?php } ?>
             </ul>
         </div>
         <div id="nav-right">
