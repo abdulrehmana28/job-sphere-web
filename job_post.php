@@ -3,7 +3,7 @@
 <?php
 if (isset($_SESSION['logged_in'])) {
     if ($_SESSION['logged_in'] === 'T') {
-        if ($_SESSION['user_type'] === 'employer') {
+        if (isset($_SESSION['user_type']) && ($_SESSION['user_type'] === 'employer' || $_SESSION['user_type'] === 'admin')) {
 
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $name = $_POST['company_name'];
@@ -87,7 +87,7 @@ if (isset($_SESSION['logged_in'])) {
             </html>
 
 <?php } else {
-            echo '<h2>Only Employer can access this page</h2>';
+            echo '<h2>Only Employer or admin can access this page</h2>';
         }
     } else {
         header('location: login.php');
