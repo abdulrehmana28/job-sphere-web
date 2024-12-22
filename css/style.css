@@ -538,18 +538,18 @@ textarea {
 
 /* !=========== Inquiries page ========= */
 
-.inquiries-container {
+.table-container {
     width: 100%;
     height: fit-content;
     /* background-color: gray; */
 }
-.inquiries-container h1 {
+.table-container h1 {
     text-align: center;
     margin: 1.5vw 0;
     font-size: 2.5vw;
 }
 
-.inquiries-container table {
+.table-container table {
     margin: 1.5vw auto;
     width: 90%;
     background-color: rgb(228, 218, 210);
@@ -558,18 +558,18 @@ textarea {
     /* transform: translateX(-50%); */
 }
 
-.inquiries-container table th {
+.table-container table th {
     text-transform: uppercase;
     text-align: center;
     background-color: #333333;
     padding: 0.7vw;
     color: white;
 }
-.inquiries-container table th:last-child{
+.table-container table th:last-child{
     width: 35%;
 }
 
-.inquiries-container table td {
+.table-container table td {
     text-align: center;
     padding: 0.7vw;
     border: 1px solid #333333;

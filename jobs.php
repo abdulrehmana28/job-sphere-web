@@ -48,7 +48,7 @@
                     <a href="edit.php?eid=<?php echo $job['job_id']; ?>" class="card-button">Edit</a>
                     <a href="delete.php?did=<?php echo $job['job_id']; ?>" class="card-button">Delete</a>
                   <?php } else { ?>
-                    <a href="apply.php" class="card-button">Apply Now</a>
+                    <a href="apply.php?jid=<?php echo $job['job_id']; ?>" class="card-button">Apply Now</a>
                   <?php } ?>
                 </div>
               </div>
