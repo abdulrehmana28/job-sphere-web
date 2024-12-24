@@ -22,7 +22,7 @@
         <div class="job-listings">
           <?php
           $sql = "SELECT * FROM `joblistings`";
-          $result = mysqli_query($conn, $sql) or die('no connection to db');
+          $result = $conn->query($sql);
 
           if ($result->num_rows > 0) {
           ?>
@@ -44,11 +44,11 @@
                 <div class="job-info">
                   <div class="job-salary"><?php echo $job['job_salary']; ?>/Year</div>
                   <!-- Checking if user is admin or not -->
-                  <?php if (isset($_SESSION['logged_in'])  && $_SESSION['logged_in'] === 'T' && isset($_SESSION['user_type']) && $_SESSION['user_type'] === 'employer') { ?>
+                  <?php if (isset($_SESSION['logged_in'])  && $_SESSION['logged_in'] === 'T' && isset($_SESSION['user_type']) && ($_SESSION['user_type'] === 'employer' || $_SESSION['user_type'] === 'admin')) { ?>
                     <a href="edit.php?eid=<?php echo $job['job_id']; ?>" class="card-button">Edit</a>
                     <a href="delete.php?did=<?php echo $job['job_id']; ?>" class="card-button">Delete</a>
                   <?php } else { ?>
-                    <a href="apply.php" class="card-button">Apply Now</a>
+                    <a href="apply.php?jid=<?php echo $job['job_id']; ?>" class="card-button">Apply Now</a>
                   <?php } ?>
                 </div>
               </div>
