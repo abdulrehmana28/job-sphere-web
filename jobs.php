@@ -31,35 +31,37 @@
 
               <div class="job-card">
                 <div>
-                  <h2><?php echo $job['company_name']; ?></h2>
-                </div>
-                <div class="job-info">
-                  <div><?php echo $job['job_level']; ?></div>
-                  <div><?php echo $job['job_type']; ?></div>
-                </div>
-                <div class="job-title"><?php echo $job['job_title']; ?></div>
-                <div class="job-description">
-                  <?php echo $job['job_description']; ?>
-                </div>
-                <div class="job-info">
-                  <div class="job-salary"><?php echo $job['job_salary']; ?>/Year</div>
-                  <!-- Checking if user is admin or not -->
-                  <?php if (isset($_SESSION['logged_in'])  && $_SESSION['logged_in'] === 'T' && isset($_SESSION['user_type']) && ($_SESSION['user_type'] === 'employer' || $_SESSION['user_type'] === 'admin')) { ?>
-                    <a href="edit.php?eid=<?php echo $job['job_id']; ?>" class="card-button">Edit</a>
-                    <a href="delete.php?did=<?php echo $job['job_id']; ?>" class="card-button">Delete</a>
-                  <?php } else { ?>
-                    <a href="apply.php?jid=<?php echo $job['job_id']; ?>" class="card-button">Apply Now</a>
-                  <?php } ?>
-                </div>
+                  <img src="uploads/company_logos/<?php echo $job['company_logo']; ?>"
+                    alt="<?php echo $job['company_name']; ?> Logo"
+                    class="company-logo">
               </div>
-            <?php } ?>
+              <div class="job-info">
+                <div><?php echo $job['job_level']; ?></div>
+                <div><?php echo $job['job_type']; ?></div>
+              </div>
+              <div class="job-title"><?php echo $job['job_title']; ?></div>
+              <div class="job-description">
+                <?php echo $job['job_description']; ?>
+              </div>
+              <div class="job-info">
+                <div class="job-salary"><?php echo $job['job_salary']; ?>/Year</div>
+                <!-- Checking if user is admin or not -->
+                <?php if (isset($_SESSION['logged_in'])  && $_SESSION['logged_in'] === 'T' && isset($_SESSION['user_type']) && ($_SESSION['user_type'] === 'employer' || $_SESSION['user_type'] === 'admin')) { ?>
+                  <a href="edit.php?eid=<?php echo $job['job_id']; ?>" class="card-button">Edit</a>
+                  <a href="delete.php?did=<?php echo $job['job_id']; ?>" class="card-button">Delete</a>
+                <?php } else { ?>
+                  <a href="apply.php?jid=<?php echo $job['job_id']; ?>" class="card-button">Apply Now</a>
+                <?php } ?>
+              </div>
+        </div>
+      <?php } ?>
 
-          <?php } else {
+    <?php } else {
             echo "no data found";
           } ?>
 
-          <!-- Job Card ends -->
-        </div>
+    <!-- Job Card ends -->
+      </div>
 
       </div>
     </section>

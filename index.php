@@ -65,7 +65,7 @@
   <!-- Start of Third section-->
   <section class="recent-job-section">
     <div class="recent-job-container">
-      <div class="recent-job-heading">Job Listings</div>
+      <div class="recent-job-heading">Recent Job Listings</div>
 
       <!-- Job Listings Container -->
       <div class="job-listings">
@@ -80,7 +80,9 @@
 
             <div class="job-card">
               <div>
-                <h2><?php echo $job['company_name']; ?></h2>
+                <img src="uploads/company_logos/<?php echo $job['company_logo']; ?>"
+                  alt="<?php echo $job['company_name']; ?> Logo"
+                  class="company-logo">
               </div>
               <div class="job-info">
                 <div><?php echo $job['job_level']; ?></div>

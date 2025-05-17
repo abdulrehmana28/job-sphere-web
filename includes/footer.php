@@ -32,7 +32,7 @@
     </div>
 
     <!-- Footer Bottom Text -->
-    <div class="footer-bottom">© 2024 jobsphere.com All Rights Reserved</div>
+    <div class="footer-bottom">© 2025 jobsphere.com All Rights Reserved</div>
     <?php $conn->close(); ?>
 </footer>
 <!-- end of Footer-->
