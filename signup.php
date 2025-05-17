@@ -1,8 +1,10 @@
 <?php
 require("includes/config.php");
 
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  $name = $_POST['name'];
+  if (isset($_POST['name']))
+    $name = $_POST['name'];
   $email = $_POST['email'];
   $password = $_POST['password'];
   $confirm_password = $_POST['confirm_password'];
@@ -15,6 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   } else {
 
     $sql = "SELECT id FROM `registration` WHERE email = ?";
+
+
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('s', $email);
     $stmt->execute();
@@ -84,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <p>
           Already have an account?
-          <a href="login.html" id="login-link">Login here</a>
+          <a href="login.php" id="login-link">Login here</a>
         </p>
         <br />
         <br />
