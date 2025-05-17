@@ -65,70 +65,51 @@
   <!-- Start of Third section-->
   <section class="recent-job-section">
     <div class="recent-job-container">
-      <div class="recent-job-heading">Recent Job Listings</div>
+      <div class="recent-job-heading">Job Listings</div>
 
       <!-- Job Listings Container -->
       <div class="job-listings">
-        <!-- Job Card 1 -->
-        <div class="job-card">
-          <div>
-            <img src="images/meta350.png" alt="Meta" />
-          </div>
-          <div class="job-info">
-            <div>Entry Level</div>
-            <div>Full-Time</div>
-          </div>
-          <div class="job-title">Junior Product Designer</div>
-          <div class="job-description">
-            We are seeking a passionate Junior Product Designer to join our
-            dynamic team.
-          </div>
-          <div class="job-info">
-            <div class="job-salary">85k/Year</div>
-            <a href="login.php" class="card-button">Apply Now</a>
-          </div>
-        </div>
+        <?php
+        $sql = "SELECT * FROM `joblistings` ORDER BY `job_id` DESC LIMIT 3;";
+        $result = $conn->query($sql);
 
-        <!-- Job Card 2 -->
-        <div class="job-card">
-          <div>
-            <img src="images/amazon350.png" alt="Amazon Web Services" />
-          </div>
-          <div class="job-info">
-            <div>Expert Level</div>
-            <div>Full-Time</div>
-          </div>
-          <div class="job-title">AI Solutions Architect</div>
-          <div class="job-description">
-            As an AI Solutions Architect, you will lead the design and
-            implementation of cloud solutions.
-          </div>
-          <div class="job-info">
-            <div class="job-salary">190k/Year</div>
-            <a href="login.php" class="card-button">Apply Now</a>
-          </div>
-        </div>
+        if ($result->num_rows > 0) {
+        ?>
 
-        <!-- Job Card 3 -->
-        <div class="job-card">
-          <div>
-            <img src="images/google350.png" alt="google" />
-          </div>
-          <div class="job-info">
-            <div>Expert Level</div>
-            <div>Full-Time</div>
-          </div>
-          <div class="job-title">Senior Data Engineer</div>
-          <div class="job-description">
-            We are looking for a skilled Senior Data Engineer to join and lead
-            our team.
-          </div>
-          <div class="job-info">
-            <div class="job-salary">105k/Year</div>
-            <a href="login.php" class="card-button">Apply Now</a>
-          </div>
-        </div>
+          <?php while ($job = $result->fetch_assoc()) { ?>
+
+            <div class="job-card">
+              <div>
+                <h2><?php echo $job['company_name']; ?></h2>
+              </div>
+              <div class="job-info">
+                <div><?php echo $job['job_level']; ?></div>
+                <div><?php echo $job['job_type']; ?></div>
+              </div>
+              <div class="job-title"><?php echo $job['job_title']; ?></div>
+              <div class="job-description">
+                <?php echo $job['job_description']; ?>
+              </div>
+              <div class="job-info">
+                <div class="job-salary"><?php echo $job['job_salary']; ?>/Year</div>
+                <!-- Checking if user is admin or not -->
+                <?php if (isset($_SESSION['logged_in'])  && $_SESSION['logged_in'] === 'T' && isset($_SESSION['user_type']) && ($_SESSION['user_type'] === 'employer' || $_SESSION['user_type'] === 'admin')) { ?>
+                  <a href="edit.php?eid=<?php echo $job['job_id']; ?>" class="card-button">Edit</a>
+                  <a href="delete.php?did=<?php echo $job['job_id']; ?>" class="card-button">Delete</a>
+                <?php } else { ?>
+                  <a href="apply.php?jid=<?php echo $job['job_id']; ?>" class="card-button">Apply Now</a>
+                <?php } ?>
+              </div>
+            </div>
+          <?php } ?>
+
+        <?php } else {
+          echo "no data found";
+        } ?>
+
+        <!-- Job Card ends -->
       </div>
+
     </div>
   </section>
   <!-- Start of Third section-->
