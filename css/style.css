@@ -119,6 +119,17 @@ header {
     
 }
 
+.no-results {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: #666;
+    border: 2px dashed #eee;
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
 #nav-right ul {
     /* background-color: aquamarine; */
     list-style: none;

@@ -37,7 +37,9 @@
             <div id="nav-right-1">
                 <form action="jobs.php" method="get">
                     <input id="navbar-search" type="search" name="search" class="navbar-search"
-                        placeholder="Search Here" required />
+                        placeholder="Search Jobs Here"
+                        value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '' ?>"
+                        required />
                     <button class="navbar-search-btn" type="submit">
                         <img src="images/icons/search-icon.svg" alt="search">
                     </button>
