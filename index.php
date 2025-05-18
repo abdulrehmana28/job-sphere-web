@@ -27,7 +27,12 @@
         </p>
         <div class="buttons">
           <a href="jobs.php" class="btn">Find Job</a>
-          <a href="job_post.php" class="btn">Post Job</a>
+          <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === 'T' && isset($_SESSION['user_type']) && $_SESSION['user_type'] === 'job_seeker'): ?>
+            <!-- Add create cv link here -->
+            <a href="Add link here" class="btn">Create CV</a>
+          <?php else: ?>
+            <a href="job_post.php" class="btn">Post Job</a>
+          <?php endif; ?>
         </div>
       </div>
       <div class="image-content">
