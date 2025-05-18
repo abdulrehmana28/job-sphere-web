@@ -120,6 +120,8 @@ if (isset($_SESSION['logged_in'])) {
                     </div>
                 </section>
 
+                <script type="module" src="js/jobPostValidation.js"></script>
+
                 <!-- ======== footer ========= -->
                 <?php require('includes/footer.php') ?>
 

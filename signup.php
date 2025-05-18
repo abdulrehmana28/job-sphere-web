@@ -78,23 +78,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <label for="confirm_password" class="form-label">Confirm Password:</label>
         <input type="password" id="confirm_password" name="confirm_password" class="form-input" required />
 
-        <label class="form-label">Register as:</label><br>
-        <input type="radio" id="job_seeker" name="usertype" value="job_seeker" />Job Seeker
+        <div class="radio-group">
+          <label class="form-label">Register as:</label><br>
+          <label>
+            <input type="radio" name="usertype" value="job_seeker" />
+            Job Seeker
+          </label>
+          <label>
+            <input type="radio" name="usertype" value="employer" />
+            Employer
+          </label>
 
-        <input type="radio" id="employer" name="usertype" value="employer" />
-        Employer
+          <input type="submit" value="Sign Up" class="submit-button" />
 
-        <input type="submit" value="Sign Up" class="submit-button" />
-
-        <p>
-          Already have an account?
-          <a href="login.php" id="login-link">Login here</a>
-        </p>
-        <br />
-        <br />
+          <p>
+            Already have an account?
+            <a href="login.php" id="login-link">Login here</a>
+          </p>
+          <br />
+          <br />
       </form>
     </div>
   </section>
+
+  <script type="module" src="js/signupValidation.js"></script>
 
   <!-- Start of Footer-->
   <?php require('includes/footer.php') ?>

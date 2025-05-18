@@ -124,6 +124,8 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == 'T') {
             </div>
         </section>
 
+        <script src="js/jobApplyValidation.js"></script>
+
         <!-- ======== footer ========= -->
         <?php require('includes/footer.php') ?>
 

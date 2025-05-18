@@ -165,6 +165,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       </div>
     </div>
   </section>
+
+  <script type="module" src="js/contactFormValidation.js"></script>
   <!-- ======== footer ========= -->
   <?php require('includes/footer.php') ?>
 
