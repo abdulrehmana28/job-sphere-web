@@ -19,6 +19,11 @@ document.addEventListener("DOMContentLoaded", function () {
   emailInput.addEventListener("input", validateEmail);
   passwordInput.addEventListener("input", validatePassword);
 
+  /**
+   * Validates the email input field for presence and correct email format.
+   * Displays an error message if the field is empty or the value is not a valid email address.
+   * @returns {boolean} True if the email input is valid; otherwise, false.
+   */
   function validateEmail() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailInput.value.trim()) {
@@ -33,6 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
     return true;
   }
 
+  /**
+   * Validates the password input field for presence and minimum length.
+   * Displays an error message if the password is empty or shorter than 6 characters.
+   * @returns {boolean} True if the password is valid; otherwise, false.
+   */
   function validatePassword() {
     if (!passwordInput.value.trim()) {
       showError(passwordError, "Password is required");
@@ -46,12 +56,21 @@ document.addEventListener("DOMContentLoaded", function () {
     return true;
   }
 
+  /**
+   * Displays an error message and visually marks the associated input field as invalid.
+   * @param {HTMLElement} element - The error message container element.
+   * @param {string} message - The error message to display.
+   */
   function showError(element, message) {
     element.textContent = message;
     element.style.display = "block";
     element.previousElementSibling.classList.add("input-error");
   }
 
+  /**
+   * Clears the error message and hides the error element for an input field.
+   * Also removes the "input-error" CSS class from the associated input element.
+   */
   function clearError(element) {
     element.textContent = "";
     element.style.display = "none";

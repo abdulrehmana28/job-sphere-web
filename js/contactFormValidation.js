@@ -15,7 +15,10 @@ document.addEventListener("DOMContentLoaded", function () {
     field.parentNode.insertBefore(error, field.nextSibling);
   });
 
-  // Validation functions
+  /**
+   * Validates that the name field is not empty.
+   * @return {boolean} True if the name field contains a non-empty value; otherwise, false.
+   */
   function validateName() {
     if (!fields.name.value.trim()) {
       showError(fields.name, "Name is required");
@@ -25,6 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
     return true;
   }
 
+  /**
+   * Validates the email input field for presence and correct email format.
+   * @returns {boolean} True if the email field is non-empty and matches the standard email pattern; otherwise, false.
+   */
   function validateEmail() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!fields.email.value.trim()) {
@@ -39,6 +46,11 @@ document.addEventListener("DOMContentLoaded", function () {
     return true;
   }
 
+  /**
+   * Validates that the phone field is non-empty and matches the format XX-XXX-XXXXXX.
+   * Displays an error message if the field is empty or the format is incorrect.
+   * @returns {boolean} True if the phone number is valid; otherwise, false.
+   */
   function validatePhone() {
     const phoneRegex = /^\d{2}-\d{3}-\d{6}$/;
     if (!fields.phone.value.trim()) {
@@ -53,6 +65,11 @@ document.addEventListener("DOMContentLoaded", function () {
     return true;
   }
 
+  /**
+   * Validates that a selection has been made in the source field.
+   * Displays an error message if no option is selected.
+   * @return {boolean} True if a selection is made; otherwise, false.
+   */
   function validateSource() {
     if (fields.source.value === "") {
       showError(fields.source, "Please select an option");
@@ -62,6 +79,10 @@ document.addEventListener("DOMContentLoaded", function () {
     return true;
   }
 
+  /**
+   * Validates that the message field is not empty.
+   * @return {boolean} True if the message field contains text; otherwise, false.
+   */
   function validateMessage() {
     if (!fields.message.value.trim()) {
       showError(fields.message, "Message is required");
@@ -71,6 +92,11 @@ document.addEventListener("DOMContentLoaded", function () {
     return true;
   }
 
+  /**
+   * Displays a validation error message for a form field and applies error styling.
+   * @param {HTMLElement} field - The input field to display the error for.
+   * @param {string} message - The error message to show.
+   */
   function showError(field, message) {
     const errorElement = field.nextElementSibling;
     errorElement.textContent = message;
@@ -78,6 +104,10 @@ document.addEventListener("DOMContentLoaded", function () {
     field.classList.add("input-error");
   }
 
+  /**
+   * Removes the error message and error styling from the specified input field.
+   * @param {HTMLElement} field - The input field whose error state should be cleared.
+   */
   function clearError(field) {
     const errorElement = field.nextElementSibling;
     errorElement.textContent = "";
