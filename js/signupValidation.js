@@ -24,7 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
   radioError.className = "radio-error";
   radioGroup.appendChild(radioError);
 
-  // Validation functions
+  /**
+   * Validates that the name input field is not empty.
+   * @return {boolean} True if the name is provided; otherwise, false.
+   */
   function validateName() {
     if (!inputs.name.value.trim()) {
       showError(errors.name, "Name is required", inputs.name);
@@ -34,6 +37,10 @@ document.addEventListener("DOMContentLoaded", function () {
     return true;
   }
 
+  /**
+   * Validates the email input field for presence and correct email format.
+   * @return {boolean} True if the email is non-empty and matches a valid email pattern; otherwise, false.
+   */
   function validateEmail() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!inputs.email.value.trim()) {
@@ -52,6 +59,11 @@ document.addEventListener("DOMContentLoaded", function () {
     return true;
   }
 
+  /**
+   * Validates the password input field for presence and minimum length.
+   * Displays an error if the password is empty or shorter than 6 characters.
+   * @returns {boolean} True if the password is valid; otherwise, false.
+   */
   function validatePassword() {
     if (!inputs.password.value.trim()) {
       showError(errors.password, "Password is required", inputs.password);
@@ -69,6 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
     return true;
   }
 
+  /**
+   * Validates that the confirm password field is filled and matches the password field.
+   * @return {boolean} True if the confirm password is provided and matches the password; otherwise, false.
+   */
   function validateConfirmPassword() {
     if (!inputs.confirm_password.value.trim()) {
       showError(
@@ -90,6 +106,10 @@ document.addEventListener("DOMContentLoaded", function () {
     return true;
   }
 
+  /**
+   * Validates that a user type radio button is selected.
+   * @return {boolean} True if a user type is selected; otherwise, false.
+   */
   function validateUserType() {
     const selected = [...inputs.usertype].some((radio) => radio.checked);
     if (!selected) {
@@ -101,12 +121,23 @@ document.addEventListener("DOMContentLoaded", function () {
     return true;
   }
 
+  /**
+   * Displays an error message and applies error styling to the specified input element.
+   * @param {HTMLElement} element - The element where the error message will be shown.
+   * @param {string} message - The error message to display.
+   * @param {HTMLElement} input - The input element to which error styling will be applied.
+   */
   function showError(element, message, input) {
     element.textContent = message;
     element.style.display = "block";
     input.classList.add("input-error");
   }
 
+  /**
+   * Clears the error message and error styling from the specified input field.
+   * @param {HTMLElement} element - The element displaying the error message.
+   * @param {HTMLElement} input - The input field to remove error styling from.
+   */
   function clearError(element, input) {
     element.textContent = "";
     element.style.display = "none";
