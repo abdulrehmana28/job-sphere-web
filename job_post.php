@@ -7,19 +7,57 @@ if (isset($_SESSION['logged_in'])) {
 
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $name = $_POST['company_name'];
+                $company_logo = '';
                 $job_level = $_POST['job_level'];
                 $job_type = $_POST['job_type'];
                 $job_title = $_POST['job_title'];
                 $job_description = $_POST['job_description'];
                 $job_salary = $_POST['job_salary'];
 
+                // File upload handling
+                if (isset($_FILES['company_logo']) && $_FILES['company_logo']['error'] == UPLOAD_ERR_OK) {
+                    $target_dir = "uploads/company_logos/";
+
+                    // Create directory if it doesn't exist
+                    if (!is_dir($target_dir)) {
+                        mkdir($target_dir, 0755, true);
+                    }
+
+                    // Get file info
+                    $file_name = basename($_FILES["company_logo"]["name"]);
+                    $file_tmp = $_FILES["company_logo"]["tmp_name"];
+                    $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+
+                    // Generate unique name
+                    $new_file_name = uniqid() . '.' . $file_type;
+                    $target_file = $target_dir . $new_file_name;
+
+                    // Validate file
+                    $allowed_types = ['jpg', 'jpeg', 'png', 'gif'];
+                    $max_size = 2 * 1024 * 1024; // 2MB
+
+                    if (!in_array($file_type, $allowed_types)) {
+                        die("Error: Only JPG, JPEG, PNG & GIF files are allowed.");
+                    }
+
+                    if ($_FILES["company_logo"]["size"] > $max_size) {
+                        die("Error: File too large. Max size is 2MB.");
+                    }
+
+                    if (move_uploaded_file($file_tmp, $target_file)) {
+                        $company_logo = $new_file_name;
+                    } else {
+                        die("Error uploading file.");
+                    }
+                }
+
                 if (empty($name) || empty($job_level) || empty($job_type) || empty($job_title) || empty($job_description) || empty($job_salary)) {
                     echo "All fields are required";
                 } else {
 
-                    $sql = "INSERT INTO `joblistings` (`company_name`, `job_level`, `job_type` ,`job_title`, `job_description`, `job_salary`) VALUES (?, ?, ?, ?, ?, ?);";
+                    $sql = "INSERT INTO `joblistings` (`company_name`, `company_logo`,`job_level`, `job_type` ,`job_title`, `job_description`, `job_salary`) VALUES (?, ?, ?, ?, ?, ?,?);";
                     $stmt = $conn->prepare($sql);
-                    $stmt->bind_param('ssssss', $name, $job_level, $job_type, $job_title, $job_description, $job_salary);
+                    $stmt->bind_param('sssssss', $name, $company_logo, $job_level, $job_type, $job_title, $job_description, $job_salary);
 
                     if ($stmt->execute()) {
                         echo ('Your response has been recorded');
@@ -49,11 +87,14 @@ if (isset($_SESSION['logged_in'])) {
                     <?php require('includes/navbar.php') ?>
 
                     <div class="signup-section">
-                        <form class="signup-form" method="POST">
+                        <form class="signup-form" method="POST" enctype="multipart/form-data">
                             <h2>Job Post Form</h2> <br>
 
                             <label for="name" class="form-label">Company Name:</label>
                             <input type="text" id="company_name" name="company_name" placeholder="Google" class="form-input" />
+
+                            <label for="logo" class="form-label">Company logo:</label>
+                            <input type="file" name="company_logo" accept="image/*"> <br /> <br />
 
                             <label for="job_level" class="form-label">Job level:</label>
                             <input type="text" id="job_level" name="job_level" placeholder="Entry-level" class="form-input" required />
@@ -78,6 +119,8 @@ if (isset($_SESSION['logged_in'])) {
                         </form>
                     </div>
                 </section>
+
+                <script type="module" src="js/jobPostValidation.js"></script>
 
                 <!-- ======== footer ========= -->
                 <?php require('includes/footer.php') ?>

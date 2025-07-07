@@ -52,6 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
   <title>Sign in - JobSphere</title>
   <?php require('includes/head.php'); ?>
+  
 </head>
 
 <body>
@@ -60,25 +61,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php require('includes/navbar.php'); ?>
 
     <div class="login-section">
-      <form class="login-form" method="POST">
+      <form class="login-form" method="POST" id="loginForm">
         <h2>Login</h2>
 
-        <label for="email" class="form-label">Email:</label>
-        <input type="email" id="email" name="email" class="form-input" required /><br />
+        <div class="form-group">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" id="email" name="email" class="form-input" required />
+          <!-- Error message will be inserted here by JavaScript -->
+        </div>
 
-        <label for="password" class="form-label">Password:</label>
-        <input type="password" id="password" name="password" class="form-input" required /><br />
+        <div class="form-group">
+          <label for="password" class="form-label">Password:</label>
+          <input type="password" id="password" name="password" class="form-input" required /><br />
 
-        <input type="checkbox" id="remember" name="remember" class="form-checkbox" />
-        <label for="remember" class="checkbox-label">Remember Me</label><br /><br />
+          <input type="checkbox" id="remember" name="remember" class="form-checkbox" />
+          <label for="remember" class="checkbox-label">Remember Me</label><br /><br />
 
-        <input type="submit" value="Login" class="submit-button" />
+          <input type="submit" value="Login" class="submit-button" />
       </form>
     </div>
   </section>
 
+  <!-- <script type="module" src="js/loginValidation.js"></script> -->
   <!-- ======== footer ========= -->
   <?php require('includes/footer.php') ?>
 </body>
+
 
 </html>

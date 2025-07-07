@@ -31,13 +31,11 @@
                             <th>Apply id</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Age</th>
                             <th>Phone</th>
-                            <th>Address</th>
-                            <th>Education</th>
                             <th>Company</th>
                             <th>Job Title</th>
                             <th>Salary</th>
+                            <th>Resume</th>
                         </thead>
                         <tbody>
                             <?php
@@ -47,13 +45,21 @@
                                     <td> <?php echo $row['apply_id']; ?> </td>
                                     <td> <?php echo $row['name']; ?> </td>
                                     <td> <?php echo $row['email']; ?> </td>
-                                    <td> <?php echo $row['age']; ?> </td>
                                     <td> <?php echo $row['phone']; ?> </td>
-                                    <td> <?php echo $row['address']; ?> </td>
-                                    <td> <?php echo $row['education']; ?> </td>
                                     <td> <?php echo $row['company_name']; ?> </td>
                                     <td> <?php echo $row['job_title']; ?> </td>
                                     <td> <?php echo $row['job_salary']; ?> </td>
+                                    <td>
+                                        <?php if (!empty($row['resume_path'])): ?>
+                                            <a href="uploads/resumes/<?php echo $row['resume_path']; ?>"
+                                                target="_blank"
+                                                class="resume-link">
+                                                View Resume
+                                            </a>
+                                        <?php else: ?>
+                                            No resume uploaded
+                                        <?php endif; ?>
+                                    </td>
                                 </tr>
                             <?php } ?>
 

@@ -14,22 +14,50 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == 'T') {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $name = $_POST['name'];
         $email = $_POST['email'];
-        $age = $_POST['age'];
+        $resume_path = '';
         $phone = $_POST['phone'];
-        $address = $_POST['address'];
-        $education = $_POST['education'];
         $company_name = $_POST['company_name'];
         $job_title = $_POST['job_title'];
         $job_salary = $_POST['job_salary'];
 
+        // PDF File upload handling
+        if (isset($_FILES['resume']) && $_FILES['resume']['error'] == UPLOAD_ERR_OK) {
+            $target_dir = "uploads/resumes/";
+            $max_size = 5 * 1024 * 1024; // 5MB
 
-        if (empty($name) || empty($email) || empty($age) || empty($phone) || empty($address) || empty($education)) {
+            // Create directory if not exists
+            if (!is_dir($target_dir)) {
+                mkdir($target_dir, 0755, true);
+            }
+
+            // Validate PDF
+            $file_type = strtolower(pathinfo($_FILES['resume']['name'], PATHINFO_EXTENSION));
+            if ($file_type != 'pdf') {
+                die("Error: Only PDF files are allowed.");
+            }
+
+            if ($_FILES['resume']['size'] > $max_size) {
+                die("Error: File too large. Max size is 5MB.");
+            }
+
+            // Generate unique name
+            $new_name = uniqid() . '.pdf';
+            $target_file = $target_dir . $new_name;
+
+            if (move_uploaded_file($_FILES['resume']['tmp_name'], $target_file)) {
+                $resume_path = $new_name;
+            } else {
+                die("Error uploading resume.");
+            }
+        } // ============================================ 
+
+        if (empty($name) || empty($email) || empty($phone)) {
             echo "All fields are required";
         } else {
 
-            $sql = "INSERT INTO `applications` (`name`, `email`, `age`, `phone`, `address`, `education`, `company_name`, `job_title`, `job_salary`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
+            $sql = "INSERT INTO `applications` (`name`, `email`,`phone`,`company_name`, `job_title`, `job_salary`, `resume_path`) VALUES (?, ?, ?, ?, ?, ?, ?);";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param('sssssssss', $name, $email, $age, $phone, $address, $education, $company_name, $job_title, $job_salary);
+            $stmt->bind_param('sssssss', $name, $email, $phone, $company_name, $job_title, $job_salary, $resume_path);
 
             if ($stmt->execute()) {
                 echo ('Your response has been recorded');
@@ -59,7 +87,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == 'T') {
             <?php require('includes/navbar.php') ?>
 
             <div class="signup-section">
-                <form class="signup-form" method="POST">
+                <form class="signup-form" method="POST" enctype="multipart/form-data">
                     <h2>Job Application Form</h2> <br>
 
                     <label for="name" class="form-label">Name:</label>
@@ -67,17 +95,12 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == 'T') {
                     <label for="email" class="form-label">Email:</label>
                     <input type="email" id="email" name="email" class="form-input" required />
 
-                    <label for="age" class="form-label">Age:</label>
-                    <input type="number" id="age" name="age" class="form-input" required />
-
                     <label for="phone" class="form-label">Phone number:</label>
-                    <input type="tel" id="phone" name="phone" pattern="[0-9]{2}-[0-9]{3}-[0-9]{6}" placeholder="92-455-678467" class=" form-input" required />
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{2}-[0-9]{3}-[0-9]{6}" placeholder="92-455-678467" class=" form-input" required /><br /><br />
 
-                    <label for="address" class="form-label">Address:</label>
-                    <input type="text" id="address" name="address" class="form-input" />
+                    <label>Upload Resume (PDF only):</label> <br /><br />
+                    <input type="file" name="resume" accept="application/pdf" required><br />
 
-                    <label for="education" class="form-label">Education:</label>
-                    <input type="text" id="education" name="education" class="form-input" />
 
                     <?php if ($result_job->num_rows > 0) {
                         while ($job = $result_job->fetch_assoc()) {  ?>
@@ -100,6 +123,8 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == 'T') {
                 </form>
             </div>
         </section>
+
+        <script src="js/jobApplyValidation.js"></script>
 
         <!-- ======== footer ========= -->
         <?php require('includes/footer.php') ?>
